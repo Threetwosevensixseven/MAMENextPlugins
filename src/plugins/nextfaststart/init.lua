@@ -9,7 +9,7 @@ local exports = {
 
 local nextfaststart = exports
 
-local reset_subscription, stop_subscription, frame_subscription, nr_handler;
+local reset_subscription, stop_subscription, frame_subscription, nr_tap_handler, nr_change_notifier;
 local plugin_running = false;
 local frameskip = 0;
 local throttled = true;
@@ -24,19 +24,18 @@ function nextfaststart.startplugin()
 					plugin_running = true;
 					emu.print_info("nextfaststart: Started watching Next speed");
 					
-					--print("nextfaststart: nr_7f=" .. manager.machine.devices[':regs_map'].spaces["program"]:read_u8(0x7f))
+					--emu.print_info("nextfaststart: nr_7f=" .. manager.machine.devices[':regs_map'].spaces["program"]:read_u8(0x7f))
 					
-					nr_handler = manager.machine.devices[':regs_map'].spaces["program"]:install_write_tap(0, 255, "m_nr_7f_user_register_0", function(offset, data, mask)
-							if(offset == 18)
-							then
-								print("nextfaststart: ".. offset .. ", " .. data .. ", " .. mask)
-							end
+					nr_tap_handler = manager.machine.devices[':regs_map'].spaces["program"]:install_write_tap(18, 18, "m_nr_7f_user_register_0", function(offset, data, mask)
+							emu.print_info("nextfaststart: nr " .. offset .. "," .. data .. "," .. mask)
 							return nil
 						end)
-					
-					print(nr_handler)
-					
-					
+
+					nr_change_notifier = manager.machine.devices[':regs_map'].spaces["program"]:add_change_notifier(function(mode)
+							emu.print_info("nextfaststart: Reinstalling - mode " .. mode)
+							nr_tap_handler:reinstall()
+						end)
+									
 					frameskip = manager.machine.video.frameskip;
 					--manager.machine.video.frameskip = 10;
 					emu.print_info("nextfaststart: Changing Next frameskip from " .. frameskip .. " to " .. manager.machine.video.frameskip);
@@ -65,11 +64,11 @@ function nextfaststart.startplugin()
 					manager.machine.video.throttled = throttled;
 					emu.print_info("nextfaststart: Stopped watching Next speed");
 					
-					if(not nr_handler == nil)
-					then
-							print("nextfaststart: nr_handler remove")
-							nr_handler:remove()				
-					end
+					--if(not nr_tap_handler == nil)
+					--then
+					--		print("nextfaststart: nr_tap_handler remove")
+					--		nr_tap_handler:remove()				
+					--end
 					
 					plugin_running = false;
 				end
