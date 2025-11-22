@@ -84,6 +84,8 @@ nextfaststart: Reset at Max Speed
 nextfaststart: Normal Speed command received
 ```
 
+Doing the Normal Speed `OUT` inaide your project file is likely to result in slightly more speedup than doing it in NextBASIC, as the loading of the project file will also be speeded up to Max Speed.
+
 #### Max Speed Command
 Writing `1` to I/O port `$2f3b` will put the MAME ZX Spectrum Next machine back to max speed, similar to how it starts up. So in NextBASIC:
 
