@@ -46,7 +46,7 @@ local function reset_notifier()
 	local rom = emu.romname();
 	if(not plugin_running and rom == "tbblue") then
 		plugin_running = true;
-		emu.print_info("nextfaststart: Started Next machine at  Max Speed");
+		emu.print_info("nextfaststart: Started Next machine at Max Speed");
 		max_speed(true)
 		port_2f3b_tap_handler = manager.machine.devices[':maincpu'].spaces["io"]:install_write_tap(0x2f3b, 0x2f3b, "io_2f3b", tap_handler)		
 	elseif(plugin_running and rom == "tbblue") then		
