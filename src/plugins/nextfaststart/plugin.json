@@ -2,7 +2,7 @@
   "plugin": {
 	"name": "nextfaststart",
 	"description": "Next Fast Startup plugin",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"author": "Robin Verhagen-Guest",
 	"type": "plugin",
 	"start": "start"
