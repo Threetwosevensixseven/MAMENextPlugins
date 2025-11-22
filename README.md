@@ -121,3 +121,5 @@ All plugins except are copyright © 2025 Robin Verhagen-Guest, and are licensed 
 The MAME project as a whole is distributed under the terms of the GNU General Public License, version 2 or later (GPL-2.0+), since it contains code made available under multiple GPL-compatible licenses. See full licence details [here](https://docs.mamedev.org/license.html).
 
 Big thanks to holub, jjjs, Ped7g, MattN and others for debugging assistance and general moral support while writing these plugins.
+
+Other MAME speedup plugins for different usage scenarios are available, for example [skipstartupframes](https://github.com/Jakobud/skipstartupframes).
