@@ -6,7 +6,7 @@ nextfaststart plugin is a simple helper to minimize boot time on the [ZX Spectru
 
 The plugin does not have any effect on other MAME emulated machines, even if they are Spectrums or contain Z80 XCPUs with `OUT` instructions.
 
-To install, download the `nextfaststart.zip` file from the [latest release](https://github.com/Threetwosevensixseven/MAMENextPlugins/releases/latest), and unzip it into your configured [MAME plugins folder](https://docs.mamedev.org/plugins/index.html#using-plugins) folder, so that the MAME plugins folder contains a `nextfaststart` folder with the `.lua` and .json` files inside it.
+To install, download the `nextfaststart.zip` file from the [latest release](https://github.com/Threetwosevensixseven/MAMENextPlugins/releases/latest), and unzip it into your configured [MAME plugins folder](https://docs.mamedev.org/plugins/index.html#using-plugins) folder, so that the MAME plugins folder contains a `nextfaststart` folder with the `.lua` and `.json` files inside it.
 
 You may either enable plugins by as described [here](https://docs.mamedev.org/plugins/index.html#using-plugins), or by adding the `-plugins` argument to your MAME command line (useful in build scripts).
 
