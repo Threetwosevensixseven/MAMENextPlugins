@@ -109,3 +109,11 @@ nextfaststart: Command 99 ignored
 ```
 
 It is likely that other ZX Spectrum Next plugins will use other command numbers on this port, and will similarly ignore commands `0` and `1`.
+
+### Licence and Acknowledgements
+
+All plugins except are copyright © 2025 Robin Verhagen-Guest, and are licensed under [MIT](https://github.com/Threetwosevensixseven/MAMENextPlugins/blob/main/LICENSE).
+
+The MAME project as a whole is distributed under the terms of the GNU General Public License, version 2 or later (GPL-2.0+), since it contains code made available under multiple GPL-compatible licenses. See full licence details [here](https://docs.mamedev.org/license.html).
+
+Big thanks to holub, jjjs, Ped7g, MattN and others for debugging assistance and general moral support while writing these plugins.
