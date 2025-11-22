@@ -26,8 +26,13 @@ function nextfaststart.startplugin()
 					
 					--emu.print_info("nextfaststart: nr_7f=" .. manager.machine.devices[':regs_map'].spaces["program"]:read_u8(0x7f))
 					
-					nr_tap_handler = manager.machine.devices[':regs_map'].spaces["program"]:install_write_tap(18, 18, "m_nr_7f_user_register_0", function(offset, data, mask)
-							emu.print_info("nextfaststart: nr " .. offset .. "," .. data .. "," .. mask)
+					nr_tap_handler = manager.machine.devices[':regs_map'].spaces["program"]:install_write_tap(127, 127, "m_nr_7f_user_register_0", function(offset, data, mask)
+							if(data >= 32 and data <= 127)
+							then
+								emu.print_info("nextfaststart: nextreg 0x7f, '" .. string.char(data) .. "'")
+							else
+						     	emu.print_info("nextfaststart: nextreg 0x7f, " .. data)
+							end
 							return nil
 						end)
 
