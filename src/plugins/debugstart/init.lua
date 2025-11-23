@@ -16,16 +16,16 @@ local function reset_notifier()
 	if(not plugin_running) then
 		plugin_running = true
 		if (manager.machine.debugger ~= nil) then
-			print("debugstart: Hiding debugger but keeping it enabled")
+			emu.print_info("debugstart: Hiding debugger but keeping it enabled")
 			manager.machine.debugger.execution_state="run"	
 		else
-			print("debugstart: Debugger not enabled, start MAME with -d")
+			emu.print_info("debugstart: Debugger not enabled, start MAME with -d")
 		end
 	end
 end
 
 function debugstart.startplugin()
-	print("debugstart: Started plugin")
+	emu.print_info("debugstart: Started plugin")
 	debugstart = emu.add_machine_reset_notifier(reset_notifier)			
 end
 
