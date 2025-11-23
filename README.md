@@ -1,8 +1,10 @@
 # MAMENextPlugins
 
-## 1) nextfaststart Plugin
+Various plugins for [MAME](https://www.mamedev.org/), an emulator for the [ZX Spectrum Next](https://www.specnext.com/about/)™ and many other machines.
 
-nextfaststart plugin is a simple helper to minimize boot time on the [ZX Spectrum Next (tbblue)](https://wiki.specnext.dev/MAME:Installing) machine in the [MAME](https://github.com/Threetwosevensixseven/L2TimingTest/raw/main/bin/L2TimingTest.nex) emulator.
+## nextfaststart Plugin
+### Installation
+nextfaststart plugin is a simple helper to minimize boot time on the [ZX Spectrum Next (tbblue)](https://wiki.specnext.dev/MAME:Installing) machine in the MAME emulator.
 
 The plugin does not have any effect on other MAME emulated machines, even if they are Spectrums or contain Z80 XCPUs with `OUT` instructions.
 
@@ -84,6 +86,8 @@ nextfaststart: Started plugin
 nextfaststart: Reset at Max Speed
 nextfaststart: Normal Speed command received
 ```
+
+Doing the Normal Speed `OUT` inside your project file is likely to result in slightly more speedup than doing it in NextBASIC, as the loading of the project file will also be speeded up to Max Speed.
 
 #### Max Speed Command
 Writing `1` to I/O port `$2f3b` will put the MAME ZX Spectrum Next machine back to max speed, similar to how it starts up. So in NextBASIC:
@@ -183,3 +187,5 @@ All plugins except are copyright © 2025 Robin Verhagen-Guest, and are licensed 
 The MAME project as a whole is distributed under the terms of the GNU General Public License, version 2 or later (GPL-2.0+), since it contains code made available under multiple GPL-compatible licenses. See full licence details [here](https://docs.mamedev.org/license.html).
 
 Big thanks to holub, jjjs, Ped7g, MattN and others for debugging assistance and general moral support while writing these plugins.
+
+Other MAME speedup plugins for different usage scenarios are available, for example [skipstartupframes](https://github.com/Jakobud/skipstartupframes).
