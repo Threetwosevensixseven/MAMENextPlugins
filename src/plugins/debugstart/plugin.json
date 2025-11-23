@@ -1,0 +1,10 @@
+{
+  "plugin": {
+	"name": "debugstart",
+	"description": "Debugger Startup plugin",
+	"version": "1.0.0",
+	"author": "Robin Verhagen-Guest",
+	"type": "plugin",
+	"start": "start"
+  }
+}
