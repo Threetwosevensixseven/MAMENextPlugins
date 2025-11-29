@@ -1,3 +1,5 @@
+# debugstart Plugin
+
 MAME debugger has a quirk where you cannot use it unless you enable it at MAME startup with `-debug` or `-d` on the command line. Then the GUI is immediately displayed, and you cannot continue with starting the machine unless you press `F12` key to Run and Hide Debugger, or `F5` key to Run.
 
 **debugstart** plugin will keep the debugger enabled without showing the initial UI, allowing you to later press the Break in Debugger assigned key.
@@ -58,6 +60,17 @@ debugstart: Started plugin
 ```
 
 The [Break in Debugger](https://docs.mamedev.org/usingmame/defaultkeys.html#mame-user-interface-controls) assigned key will have no effect when you press it.
+
+### Tips
+Another way of controlling the debugger at startup is by making a `debug.txt` file with `g` as the only line. Then launch MAME with this on the command line: 
+
+```
+-debugscript debug.txt
+```
+
+This has a slightly different effect from the debugstart plugin. Instead of hiding the debug window and continuing (similar to the Run and Hide Debugger command in the debugger UI), this keeps the debug window open and continues (similar to the Run command in the debugger UI).
+
+When you use this technique you don't need to use the debugstart plugin.
 
 ## Licence and Acknowledgements
 

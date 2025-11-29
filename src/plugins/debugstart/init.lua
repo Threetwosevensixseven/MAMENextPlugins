@@ -2,7 +2,7 @@
 -- copyright-holders:Robin Verhagen-Guest
 local exports = {
 	name = "debugstart",
-	version = "1.0.0",
+	version = "1.0.1",
 	description = "Debugger Startup plugin",
 	license = "MIT",
 	author = { name = "Robin Verhagen-Guest" }}
@@ -10,15 +10,15 @@ local exports = {
 local debugstart = exports
 
 local reset_subscription
-local plugin_running = false
+local debugger_disabled = false
 
 local function reset_notifier()
-	if(not plugin_running) then
-		plugin_running = true
+	if(not debugger_disabled) then
 		if (manager.machine.debugger ~= nil) then
 			emu.print_info("debugstart: Hiding debugger but keeping it enabled")
 			manager.machine.debugger.execution_state="run"	
 		else
+			debugger_disabled = true
 			emu.print_info("debugstart: Debugger not enabled, start MAME with -d")
 		end
 	end

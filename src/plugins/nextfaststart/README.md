@@ -1,3 +1,5 @@
+# nextfaststart Plugin
+
 **nextfaststart** plugin is a simple helper to minimize boot time on the [ZX Spectrum Next (tbblue)](https://wiki.specnext.dev/MAME:Installing) machine in the MAME emulator.
 
 The plugin does not have any effect on other MAME emulated machines, even if they are Spectrums or contain Z80 CPUs with `OUT` instructions.
