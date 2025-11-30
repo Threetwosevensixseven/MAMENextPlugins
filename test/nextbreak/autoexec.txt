@@ -1,0 +1,1 @@
+#program autoexec#autostart  10 CD "c:/Mine"  20 .nexload nextbreak.nex9998 GO TO 100009999 CLEAR : SAVE "c:/NextZXOS/autoexec.bas" LINE 0

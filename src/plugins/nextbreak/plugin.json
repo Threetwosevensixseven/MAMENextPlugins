@@ -1,0 +1,10 @@
+{
+  "plugin": {
+	"name": "nextbreak",
+	"description": "Next Debugger Programmatic Break plugin",
+	"version": "0.0.1",
+	"author": "Robin Verhagen-Guest",
+	"type": "plugin",
+	"start": "start"
+  }
+}
