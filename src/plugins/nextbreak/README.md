@@ -1,1 +1,1 @@
-# nextbreak Plugin
+# nextdebug Plugin

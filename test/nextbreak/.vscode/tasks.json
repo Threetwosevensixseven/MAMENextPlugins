@@ -27,6 +27,17 @@
             ],
             "group": "build",
             "problemMatcher": []
+        },
+        {
+            "label": "make cspect",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "make",
+                "cspect"
+            ],
+            "group": "build",
+            "problemMatcher": []
         }
     ]
 }
